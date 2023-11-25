@@ -1,2 +1,2 @@
 # CXR-IRGen
-This is the code for the paper "Generating Clinically Accurate Chest X-Ray Image with Report" in proceeding of WACV 2024
+This is the code for the paper "CXR-IRGen: An Integrated Vision and Language Model for the Generation of Clinically Accurate Chest X-Ray Image-Report Pairs" in proceeding of WACV 2024
