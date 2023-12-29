@@ -19,4 +19,9 @@
 
     `python train_prior_model.py`
 
-   
+## TODOs
+- [x] Upload training script
+
+- [ ] Update instructions for acquiring the data
+
+- [ ] Upload inference and evaluation scripts
