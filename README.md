@@ -7,17 +7,23 @@
 ### Training
 1. Train the vision module (both Stable diffusion and U-ViT are available)
 
-    `python train_diffusion_clipSD.py`
+    ```
+    python train_diffusion_clipSD.py
   
-    `python train_diffusion_clipUViT.py`
+    python train_diffusion_clipUViT.py
+    ```
   
 2. Train the language module
 
-    `python train_bart.py`
+    ```
+   python train_bart.py
+    ```
 
-3. Train the prior model
+4. Train the prior model
 
-    `python train_prior_model.py`
+    ```
+   python train_prior_model.py
+    ```
 
 ## TODOs
 - [x] Upload training script
