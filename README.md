@@ -37,13 +37,20 @@ conda activate cxr-irgen
    python train_prior_model.py
     ```
 
-## TODOs
-- [x] Upload training script
+## Inference
+1. Sample CXR images through the fine-tuned diffusion model (both Stable diffusion and U-ViT are available)
 
-- [ ] Update instructions for acquiring the data
+    ```
+    python sample_diffusion_clipSD.py
+  
+    python sample_diffusion_clipUViT.py
+    ```
 
-- [ ] Upload inference and evaluation scripts
+2. Generate CXR reports through the fine-tuned language model (BART) and prior model (ViT)
 
+    ```
+    python sample_prior_model.py
+    ```
 
 ## Citation
 If you find this work helpful, please consider citing the following BibTeX entry:
