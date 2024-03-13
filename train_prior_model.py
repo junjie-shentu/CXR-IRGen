@@ -1,5 +1,5 @@
 from configs.train_prior_config import get_config
-from datasets_utils.prior_dataset import PriorDatasetModule
+from dataset.prior_dataset import PriorDatasetModule
 from model.prior_model import PriorModel
 from pytorch_lightning import Trainer, seed_everything
 from pytorch_lightning.loggers import wandb
@@ -14,7 +14,7 @@ def main(config):
     dataset = PriorDatasetModule(config.dataset.data_info_text_path, config.dataset.batch_size, config.dataset.num_workers)
 
     # Instantiate Prior Model using configuration
-    model = PriorModel(config.model.max_len, config.model.embedding_plan, config.model.pretrained_lm_model)
+    model = PriorModel(config.model.max_len, config.model.embedding_plan, config.model.pretrained_vit_path, config.model.pretrained_lm_model)
 
     # Configure logger and callbacks, including ModelCheckpoint and LearningRateMonitor
     logger = wandb.WandbLogger(project=config.project, name=config.run_name)

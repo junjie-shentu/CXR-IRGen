@@ -21,7 +21,7 @@ def get_config():
 
 
     config.dataset = d(
-        data_info_text_path = "/path/to/your/data/info/text/file",
+        data_info_text_path = "./dataset/data_training_prior.csv",
         batch_size = 16,
         num_workers = 0
     )
@@ -29,6 +29,7 @@ def get_config():
     config.model = d(
         max_len = 512,
         embedding_plan = "MeanPooling",
+        pretrained_vit_path = "./assets/vit-base-patch16-224.bin",
         pretrained_lm_model="/path/to/your/pretrained/lm/model",
     )
 
@@ -36,8 +37,6 @@ def get_config():
         dirpath = config.save_model_path,
         filename = '{epoch}-{val_loss:.2f}',
     )
-
-
 
 
     config.trainer = d(

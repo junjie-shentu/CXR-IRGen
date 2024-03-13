@@ -9,14 +9,14 @@ from torch.optim import AdamW
 
 
 class PriorModel(pl.LightningModule):
-    def __init__(self, max_text_length = 512, embedding_plan = "MeanPooling", pretrained_lm_model=None):
+    def __init__(self, max_text_length = 512, embedding_plan = "MeanPooling", pretrained_vit_path="./assets/vit-base-patch16-224.bin", pretrained_lm_model=None):
         super().__init__()
         # ViT configuration for the prior model
         self.vitconfig  = ViTConfig(image_size=32, patch_size=2, num_channels=4)
 
         # Prior model based on ViT architecture
         self.prior_model = ViTModel(self.vitconfig)
-        self.prior_model.load_state_dict(torch.load("./assets/vit-base-patch16-224.bin", map_location = "cpu"), strict = False)#load a pretrained model (different from version 1) 
+        self.prior_model.load_state_dict(torch.load(pretrained_vit_path, map_location = "cpu"), strict = False)
         self.prior_model.to("cuda")
 
         # Maximum length of text sequences and embedding plan

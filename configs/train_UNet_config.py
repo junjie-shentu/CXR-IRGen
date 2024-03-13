@@ -18,7 +18,7 @@ def get_config():
     config.stable_diffusion_name = "CompVis/stable-diffusion-v1-4"
 
     config.dataset = d(
-        data_info_text_path = "/path/to/your/dataset.csv",
+        data_info_text_path = "./dataset/data_training_SD",
         batch_size = 32,
         num_workers = 0
     )

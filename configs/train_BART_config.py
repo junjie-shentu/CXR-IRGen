@@ -16,7 +16,7 @@ def get_config():
     config.save_model_path = "./result/" + f"{config.project}" + "/" +f"{config.run_name}"
 
     config.dataset = d(
-        data_path = "/path/to/your/dataset.csv",
+        data_path = "./dataset/data_training_LM.csv",
         batch_size = 8,
         num_workers = 0
     )
